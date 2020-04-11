@@ -58,7 +58,7 @@
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
 
-                <button type="button" class="btn btn-secondary ml-3 mt-4">Secondary</button>
+                <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>
 
             </form>
 
