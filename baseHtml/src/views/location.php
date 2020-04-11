@@ -13,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../../index.html">DamienLocation</a>
+    <a class="navbar-brand" href="/">DamienLocation</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,6 +30,15 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="vendre.php">Vendez</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ajouter.php">Ajouter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gererMesBiens.php">Gérer</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="identification.php">S'identifier</a>
             </li>
         </ul>
     </div>

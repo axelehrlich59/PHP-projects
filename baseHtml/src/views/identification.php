@@ -28,7 +28,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="vendre.php">Vendez</a>
             </li>
             <li class="nav-item">
@@ -37,38 +37,30 @@
             <li class="nav-item">
                 <a class="nav-link" href="gererMesBiens.php">Gérer</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" href="identification.php">S'identifier</a>
             </li>
         </ul>
     </div>
 </nav>
 
-    <div class="container-fluid h-auto mt-3 d-flex justify-content-center">
-        <h1>Vous voulez vendre votre maison ? </h1>
-    </div>
+<form class="d-flex justify-content-center mt-5">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Adresse émail</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+ 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Mot de passe</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+  </div>
+</form>
 
-            <form>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput">Titrez votre annonce :</label>
-                    <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Exemple : belle maison au coin du jardin">
-                </div>
-                <div class="form-group col-md-2 mt-4">
-                    <label for="formGroupExampleInput">Prix :</label>
-                    <input type="number" class="form-control " id="formGroupExampleInput2" placeholder="500$">
-                </div>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput2">Email :</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Exemple : tarteàlacrème@gravier.com">
-                </div>
-                
-                <div class="form-group col-md-5 mt-4">
-                    <label for="exampleFormControlFile1">Sélectionnez une photo :</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
+<div class="d-flex justify-content-center">
+<button type="submit" class="btn btn-primary">s'inscrire</button>
+</div>
 
-                <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>
-
-            </form>
 
 </body>

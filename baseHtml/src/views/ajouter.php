@@ -28,10 +28,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="vendre.php">Vendez</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="ajouter.php">Ajouter</a>
             </li>
             <li class="nav-item">
@@ -44,31 +44,23 @@
     </div>
 </nav>
 
-    <div class="container-fluid h-auto mt-3 d-flex justify-content-center">
-        <h1>Vous voulez vendre votre maison ? </h1>
-    </div>
+<div class="d-flex justify-content-center mt-4 ">
+<h1>Ici, vous pouvez ajouter votre agence ainsi que votre client !</h1>
+</div>
 
-            <form>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput">Titrez votre annonce :</label>
-                    <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Exemple : belle maison au coin du jardin">
-                </div>
-                <div class="form-group col-md-2 mt-4">
-                    <label for="formGroupExampleInput">Prix :</label>
-                    <input type="number" class="form-control " id="formGroupExampleInput2" placeholder="500$">
-                </div>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput2">Email :</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Exemple : tarteàlacrème@gravier.com">
-                </div>
-                
-                <div class="form-group col-md-5 mt-4">
-                    <label for="exampleFormControlFile1">Sélectionnez une photo :</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
+<form>
+  <div class="form-group col-md-5">
+    <label for="formGroupExampleInput">Votre agence :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Exemple : Agence de mr.Dupont">
+  </div>
+  <div class="form-group col-md-5">
+    <label for="formGroupExampleInput2">Votre client :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Exemple : Mr.Dupont">
+  </div>
+  <button type="button" class="btn btn-secondary ml-3">Secondary</button>
+</form>
 
-                <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>
 
-            </form>
+
 
 </body>

@@ -10,7 +10,7 @@
 
     <title></title>
 </head>
-<body>
+<body class='h-100'>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">DamienLocation</a>
@@ -28,47 +28,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="vendre.php">Vendez</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link" href="ajouter.php">Ajouter</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="gererMesBiens.php">Gérer</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item">
                 <a class="nav-link" href="identification.php">S'identifier</a>
             </li>
         </ul>
     </div>
 </nav>
 
-    <div class="container-fluid h-auto mt-3 d-flex justify-content-center">
-        <h1>Vous voulez vendre votre maison ? </h1>
-    </div>
+<div class = 'container-fluid h-25 d-flex justify-content-center align-items-center'>
+<button type="button" class="btn btn-primary">Lire</button>
+</div>
 
-            <form>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput">Titrez votre annonce :</label>
-                    <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Exemple : belle maison au coin du jardin">
-                </div>
-                <div class="form-group col-md-2 mt-4">
-                    <label for="formGroupExampleInput">Prix :</label>
-                    <input type="number" class="form-control " id="formGroupExampleInput2" placeholder="500$">
-                </div>
-                <div class="form-group col-md-5 mt-4">
-                    <label for="formGroupExampleInput2">Email :</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Exemple : tarteàlacrème@gravier.com">
-                </div>
-                
-                <div class="form-group col-md-5 mt-4">
-                    <label for="exampleFormControlFile1">Sélectionnez une photo :</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-
-                <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>
-
-            </form>
 
 </body>
