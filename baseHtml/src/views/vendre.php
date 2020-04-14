@@ -48,7 +48,7 @@
         <h1>Vous voulez vendre votre maison ? </h1>
     </div>
 
-            <form method="post" action="src/views/gererMesBiens.php">    
+            <form method="post" action="gererMesBiens.php">    
 
                 <div class="form-group col-md-5 mt-4">
                     <label for="formGroupExampleInput">Titrez votre annonce :</label>
@@ -68,7 +68,7 @@
                     <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1">
                 </div>
 
-                <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>
+                <button type="submit" class="btn btn-secondary ml-3 mt-4">Valider</button>
 
             </form>
 

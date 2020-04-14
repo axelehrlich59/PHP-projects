@@ -1,7 +1,7 @@
-<? 
+<?php
 
-require 'models/connect.php';
-require 'config/config.php';
+require '../models/connect.php';
+require '../config/config.php';
 
 
 $db = connection();
@@ -10,22 +10,33 @@ var_dump($_POST);
 if (isset($_POST['titre']) && isset($_POST['prix'])) {
     $titre = htmlspecialchars(trim($_POST['titre']));
     $prix = htmlspecialchars(trim($_POST['prix']));
+
+}
+if (isset($_POST['email']) && isset($_POST['photo'])) {
+    $email = htmlspecialchars(trim($_POST['email']));
+    $photo = htmlspecialchars(trim($_POST['photo']));
+    
 }
 
-
-$sqlInsertTitre = "insert into vente (nomVente) values(:titre)";
+$sqlInsertTitre = "insert into vente (nomVente, prixVente, photoVente, emailVente) values(:titre,:prixvente,:photovente,:email)";
 $reqInsertTitre = $db->prepare($sqlInsertTitre);
 $reqInsertTitre->bindParam(":titre",$titre);
+$reqInsertTitre->bindParam(":prixvente",$prix);
+$reqInsertTitre->bindParam(":photovente",$photo);
+$reqInsertTitre->bindParam(":email",$email);
 $reqInsertTitre->execute();
 
-
+/*
 $sqlInsertPrix = "insert into vente (prixVente) values(:prix)";
 $reqInsertPrix = $db->prepare($sqlInsertPrix);
 $reqInsertPrix->bindParam(":prix",$prix);
 $reqInsertPrix->execute();
+*/
 
 
-
+$sqlSelectVente = "select * from vente";
+$reqSelectVente = $db->prepare($sqlSelectVente);
+$reqSelectVente->execute();
 
 
 ?>
@@ -78,16 +89,30 @@ $reqInsertPrix->execute();
         </ul>
     </div>
 </nav>
+<table class="table">
+<thead>
+<tr>
+<td>titre</td>
+<td>prix</td>
+<td>photo</td>
+<td>email</td>
+</tr>
+</thead>
+<tbody>
 
         <?php  
-            foreach ($_POST as $titre=>$prix){
+        while($data = $reqSelectVente->fetchObject()) {
+           
         ?>
 
-<td><?= $titre ?></td>
-            <td><?= $prix ?></td>
+<tr><td><?= $data->nomVente; ?></td>
+            <td><?= $data->prixVente; ?></td>
+            <td><img style="width: 100px;" src="../../public/img/<?= $data->photoVente; ?>"></td>
+            <td><?= $data->emailVente; ?></td>
         </tr>
         <?php
         }
         ?>
-
+</tbody>
+</table>
 </body>
