@@ -28,7 +28,7 @@ function head()
                 <a class="nav-link" href="src/views/ajouter.php">Ajouter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="gererMesBiens.php">Gérer</a>
+                <a class="nav-link" href="src/views/gererMesBiens.php">Gérer</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="src/views/identification.php">S'identifier</a>

@@ -48,23 +48,24 @@
         <h1>Vous voulez vendre votre maison ? </h1>
     </div>
 
-            <form>
+            <form method="post" action="src/views/gererMesBiens.php">    
+
                 <div class="form-group col-md-5 mt-4">
                     <label for="formGroupExampleInput">Titrez votre annonce :</label>
-                    <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Exemple : belle maison au coin du jardin">
+                    <input type="text" class="form-control" name="titre" id="formGroupExampleInput" placeholder="Exemple : belle maison au coin du jardin">
                 </div>
                 <div class="form-group col-md-2 mt-4">
                     <label for="formGroupExampleInput">Prix :</label>
-                    <input type="number" class="form-control " id="formGroupExampleInput2" placeholder="500$">
+                    <input type="number" class="form-control" name="prix" id="formGroupExampleInput2" placeholder="500$">
                 </div>
                 <div class="form-group col-md-5 mt-4">
                     <label for="formGroupExampleInput2">Email :</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Exemple : tarteàlacrème@gravier.com">
+                    <input type="text" class="form-control" name="email" id="formGroupExampleInput3" placeholder="Exemple : tarteàlacrème@gravier.com">
                 </div>
                 
                 <div class="form-group col-md-5 mt-4">
                     <label for="exampleFormControlFile1">Sélectionnez une photo :</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1">
                 </div>
 
                 <button type="button" class="btn btn-secondary ml-3 mt-4">Valider</button>

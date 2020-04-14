@@ -12,3 +12,5 @@ function connection(){
         die('Erreur à la BD : '.$e->getMessage());
     }
 }
+
+?>

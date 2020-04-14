@@ -1,3 +1,38 @@
+<? 
+
+require 'models/connect.php';
+require 'config/config.php';
+
+
+$db = connection();
+
+var_dump($_POST); 
+if (isset($_POST['titre']) && isset($_POST['prix'])) {
+    $titre = htmlspecialchars(trim($_POST['titre']));
+    $prix = htmlspecialchars(trim($_POST['prix']));
+}
+
+
+$sqlInsertTitre = "insert into vente (nomVente) values(:titre)";
+$reqInsertTitre = $db->prepare($sqlInsertTitre);
+$reqInsertTitre->bindParam(":titre",$titre);
+$reqInsertTitre->execute();
+
+
+$sqlInsertPrix = "insert into vente (prixVente) values(:prix)";
+$reqInsertPrix = $db->prepare($sqlInsertPrix);
+$reqInsertPrix->bindParam(":prix",$prix);
+$reqInsertPrix->execute();
+
+
+
+
+
+?>
+
+
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -44,9 +79,15 @@
     </div>
 </nav>
 
-<div class = 'container-fluid h-25 d-flex justify-content-center align-items-center'>
-<button type="button" class="btn btn-primary">Lire</button>
-</div>
+        <?php  
+            foreach ($_POST as $titre=>$prix){
+        ?>
 
+<td><?= $titre ?></td>
+            <td><?= $prix ?></td>
+        </tr>
+        <?php
+        }
+        ?>
 
 </body>
