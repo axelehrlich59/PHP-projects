@@ -1,3 +1,26 @@
+<?php
+
+require '../models/connect.php';
+require '../config/config.php';
+
+
+$db = connection();
+
+
+if (isset($_POST['email']) && isset($_POST['mdp'])) {
+    $email = htmlspecialchars(trim($_POST['email']));
+    $mdp = htmlspecialchars(trim($_POST['mdp']));
+}
+
+$sqlInsertLog = "INSERT into contact (contactMail, mdpContact) values(:mail,:mdp)";
+$reqInsertLog = $db->prepare($sqlInsertLog);
+$reqInsertLog->bindParam(":mail",$email);
+$reqInsertLog->bindParam(":mdp",$mdp);
+$reqInsertLog->execute();
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -44,23 +67,26 @@
     </div>
 </nav>
 
-<form class="d-flex justify-content-center mt-5">
+<form class="d-flex justify-content-center mt-5" method="post" action="../../index.php">
   <div class="form-group">
     <label for="exampleInputEmail1">Adresse émail</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
  
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" name="mdp" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-check">
   </div>
-</form>
 
-<div class="d-flex justify-content-center">
+
+  <div class="d-flex justify-content-center">
 <button type="submit" class="btn btn-primary">s'inscrire</button>
 </div>
+
+</form>
+
 
 
 </body>

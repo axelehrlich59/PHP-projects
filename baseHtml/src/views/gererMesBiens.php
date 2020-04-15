@@ -107,11 +107,12 @@ $reqSelectVente->execute();
            
         ?>
 
-<tr><td><?= $data->nomVente; ?></td>
+    <tr><td><?= $data->nomVente; ?></td>
             <td><?= $data->prixVente; ?></td>
             <td><img style="width: 100px;" src="../../public/img/<?= $data->photoVente; ?>"></td>
             <td><?= $data->emailVente; ?></td>
             <td><a href="delete.php?id=<?php echo $data->idVente ?>"><button class="btn btn-danger"> <i class="fa fa-minus-square" aria-hidden="true"></i> Supprimer</button></a></td>
+            <td><a href="modifier.php?id=<?php echo $data->idVente ?>"><button type="button" class="btn btn-warning">Modifier</button></td>
         </tr>
         <?php
         }
