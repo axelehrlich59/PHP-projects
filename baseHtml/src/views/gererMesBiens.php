@@ -6,7 +6,7 @@ require '../config/config.php';
 
 $db = connection();
 
-var_dump($_POST); 
+
 if (isset($_POST['titre']) && isset($_POST['prix'])) {
     $titre = htmlspecialchars(trim($_POST['titre']));
     $prix = htmlspecialchars(trim($_POST['prix']));
@@ -96,6 +96,8 @@ $reqSelectVente->execute();
 <td>prix</td>
 <td>photo</td>
 <td>email</td>
+<td>action</td>
+
 </tr>
 </thead>
 <tbody>
@@ -109,6 +111,7 @@ $reqSelectVente->execute();
             <td><?= $data->prixVente; ?></td>
             <td><img style="width: 100px;" src="../../public/img/<?= $data->photoVente; ?>"></td>
             <td><?= $data->emailVente; ?></td>
+            <td><a href="delete.php?id=<?php echo $data->idVente ?>"><button class="btn btn-danger"> <i class="fa fa-minus-square" aria-hidden="true"></i> Supprimer</button></a></td>
         </tr>
         <?php
         }

@@ -65,6 +65,7 @@ while ($data = $reqProductsCategories->fetchObject()) {
 
 
 		</tbody>
+		
 	</table>
 </div>
 
