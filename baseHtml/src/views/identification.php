@@ -1,22 +1,11 @@
 <?php
 
-require '../models/connect.php';
-require '../config/config.php';
-
-
-$db = connection();
-
-
-if (isset($_POST['email']) && isset($_POST['mdp'])) {
-    $email = htmlspecialchars(trim($_POST['email']));
-    $mdp = htmlspecialchars(trim($_POST['mdp']));
+session_start();
+if(isset($_SESSION['login'])){
+    $email = $_SESSION['login'];
+}else{
+    $email = '';
 }
-
-$sqlInsertLog = "INSERT into contact (contactMail, mdpContact) values(:mail,:mdp)";
-$reqInsertLog = $db->prepare($sqlInsertLog);
-$reqInsertLog->bindParam(":mail",$email);
-$reqInsertLog->bindParam(":mdp",$mdp);
-$reqInsertLog->execute();
 
 ?>
 
@@ -42,9 +31,15 @@ $reqInsertLog->execute();
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
+        <?php
+            if($email === "marceremus@gmail.com") {
+                ?>
+            <li class="nav-item active">
                 <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
             </li>
+            <?php
+            }
+            ?>
             <li class="nav-item">
                 <a class="nav-link" href="location.php">Location</a>
             </li>
@@ -57,9 +52,15 @@ $reqInsertLog->execute();
             <li class="nav-item">
                 <a class="nav-link" href="ajouter.php">Ajouter</a>
             </li>
+            <?php
+            if($email === "marceremus@gmail.com") {
+                ?>
             <li class="nav-item">
                 <a class="nav-link" href="gererMesBiens.php">Gérer</a>
             </li>
+            <?php
+            }
+            ?>
             <li class="nav-item active">
                 <a class="nav-link" href="identification.php">S'identifier</a>
             </li>
