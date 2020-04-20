@@ -12,22 +12,24 @@ if(isset($_SESSION['login'])){
     $email = '';
 }
 
-if(isset($_POST['mdp'])){
-    $mdp = password_hash(htmlspecialchars(trim($_POST['mdp'])), PASSWORD_BCRYPT);
-}else{
-    $mdp = '';
-}
-
-if(isset($_POST['email'])){
-    $email = htmlspecialchars(trim($_POST['email']));
-}else{
-    $email = '';
-}
+$options = [
+    'cost' => 12,
+];
 
 
+
+//INSERT
+
+/*
+
+$sql = "INSERT INTO utilisateur (email, mdp) VALUES ($mdp, $email)";
+$reqInsertUser = $db->prepare($sql);
+$reqInsertUser->execute();
+
+*/
 
 //SELECT
-
+/*
 $sqlSelectUser = "SELECT COUNT(email) FROM utilisateur WHERE mdpUser = :mdp AND mailUser = :email AND idUser = :ids";
 $reqSelectUser = $db->prepare($sqlSelectUser);
 $reqSelectUser->bindParam(':mdp', $mdp);
@@ -35,19 +37,14 @@ $reqSelectUser->bindParam(':email', $email);
 $reqSelectUser->bindParam(':ids', $id);
 $reqSelectUser->execute();
 
-$retureMDP = $reqInsertUser->fetchObject();
+
+
 
 /*
-if($retureMDP ===1 ){
-    return 'OK';
-}else{
-    return 'Not ok';
-} */
-
-
-
-
-
+$options = [
+    'cost' => 12,
+];
+*/
 ?>
 
 
@@ -109,7 +106,8 @@ if($retureMDP ===1 ){
     </div>
 </nav>
 
-<form class="d-flex justify-content-center mt-5" method="post" action="../../index.php">
+<form class="d-flex justify-content-center mt-5" method="post" action="loginBase.php">
+
   <div class="form-group">
     <label for="exampleInputEmail1">Adresse émail</label>
     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -124,7 +122,7 @@ if($retureMDP ===1 ){
 
 
   <div class="d-flex justify-content-center">
-<button type="submit" class="btn btn-primary">s'inscrire</button>
+<button type="submit" class="btn btn-primary">Créer</button>
 </div>
 
 </form>
